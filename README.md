@@ -1,3 +1,2 @@
 # Liga
-Pirmais projekts
 Mans pirmais projekts šajā mājaslapā, kur es nepavisam neko nesaprotu:*
