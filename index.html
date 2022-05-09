@@ -10,7 +10,24 @@
     <h1>Vai gribi uzzināt cik ātrs tu esi?</h1>
     <p>Uzspied uz pirmā attēla, tad meklē otru un uzklikšķini uz tā cik ātri vien vari, tad zināsi cik ātrs tu esi, vai tieši pretēji - LĒNS, hahahaha</p>
     <p>Tavs laiks:<span id="tavslaiks">Te būs redzams laiks</span></p>
-    <div id="attels" style="position:absolute;"></div> >
+    <div id="attels" style="position:absolute;"></div> 
+    <script>
+            var sakums; //piefiksē sākuma laiku
+            var beigas; //piefiksē beigu laiku
+            var bilde=document.getElementById("attels"); //J5piesaistu div kastei ar id=attels
+            var game=false; //definēts mainīgais game, kas saka, ka spēle sākumā nenotiek
 
+            //funkcija, kas nejaušā punktā parāda attēlu.
+            function paradies(){
+                var top=Math.random()*149;//Nejauši izvēlas attēla y koordināti
+                var left=Math. random()*399; //Nejauši izvēlas attēla x koordināti
+                
+                document.getElementsById("attels").style.top=top+"px";
+                document.getElementsById("attels").style.left=left+"px";
+                document.getElementsById("attels").style.backgroundColor="#6d0e8f";
+
+
+            }
+    </script>
 </body>
 </html>
