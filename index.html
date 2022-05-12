@@ -10,7 +10,7 @@
     <h1>Vai gribi uzzināt cik ātrs tu esi?</h1>
     <p>Uzspied uz pirmā attēla, tad meklē otru un uzklikšķini uz tā cik ātri vien vari, tad zināsi cik ātrs tu esi, vai tieši pretēji - LĒNS, hahahaha</p>
     <p>Tavs laiks:<span id="tavslaiks">Te būs redzams laiks</span></p>
-    <div id="attels" style="position:absolute background-color: "#6d0e8f"></div> 
+    <div id="attels" style="position:absolute; width:200px;height:200px"></div> 
     <script>
             var sakums; //piefiksē sākuma laiku
             var beigas; //piefiksē beigu laiku
@@ -19,16 +19,44 @@
 
             //funkcija, kas nejaušā punktā parāda attēlu.
             function paradies(){
-                var top=Math.random()*149;//Nejauši izvēlas attēla y koordināti
-                var left=Math. random()*399; //Nejauši izvēlas attēla x koordināti
+                var top=Math.random()*150;//Nejauši izvēlas attēla y koordināti
+                var left=Math. random()*400; //Nejauši izvēlas attēla x koordināti
                 
-                document.getElementsById("attels").style.top=top+"px";
-                document.getElementsById("attels").style.left=left+"px";
-                document.getElementsById("attels").style.backgroundColor="#6d0e8f";
-                document.getElementsById("attels").style.display="block";
+                document.getElementById("attels").style.top=top+"px";
+                document.getElementById("attels").style.left=left+"px";
+                //document.getElementById("attels").style.backgroundColor="#6d0e8f";
+                document.getElementById("attels").style.display="block";
+                console.log("hei!");
+                sakums=new Date().getTime();
+                console.log(sakums);
 
+                if(!game){
+                    game=true;//Pasludinu spēli par sākušos
+                    bilde.innerHTML="<img src='lacitis.png' width=200px>"
+                    document.getElementById("attels").onclick=function(){
+                        paradies();
+                    }
+                }
+                else{
+                    game=false;
+                    bilde.innerHTML="<img src='tedijspakala.png' width=200px>"
+                    document.getElementById("attels").onclick=function(){
+                    document.getElementById("attels").style.display="none";
+                    beigas=new Date().getTime();//piefiksē spēles beigu laiku
+                    var manslaiks=beigas-sakums;//apreķina rakcijas laiku
+                    document.getElementById("tavslaiks").innerHTML=manslaiks+"s";
+                    }
+                   
+                    
+                   
+                }
             }
-            paradies();
+            //f-cijas, kas parāda bloku pēc nejauši izvēlēta laika.
+            function bulba(){
+                setTimeout(paradies,Math.random()*2000)
+            }
+            
+            bulba();
     </script>
 </body>
 </html>
