@@ -10,7 +10,7 @@
     <h1>Vai gribi uzzināt cik ātrs tu esi?</h1>
     <p>Uzspied uz pirmā attēla, tad meklē otru un uzklikšķini uz tā cik ātri vien vari, tad zināsi cik ātrs tu esi, vai tieši pretēji - LĒNS, hahahaha</p>
     <p>Tavs laiks:<span id="tavslaiks">Te būs redzams laiks</span></p>
-    <div id="attels" style="position:absolute;"></div> 
+    <div id="attels" style="position:absolute background-color: "#6d0e8f"></div> 
     <script>
             var sakums; //piefiksē sākuma laiku
             var beigas; //piefiksē beigu laiku
@@ -25,9 +25,10 @@
                 document.getElementsById("attels").style.top=top+"px";
                 document.getElementsById("attels").style.left=left+"px";
                 document.getElementsById("attels").style.backgroundColor="#6d0e8f";
-
+                document.getElementsById("attels").style.display="block";
 
             }
+            paradies();
     </script>
 </body>
 </html>
